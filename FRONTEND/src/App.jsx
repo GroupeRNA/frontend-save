@@ -1,17 +1,15 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import AudioCapture from "../src/components/Capture/AudioCapture.jsx"
 
 function App() {
-  const [count, setCount] = useState(0)
+
 
   return (
-    <>
-      <h1 className='text-3xl font-bold  text-blue-700 m-10'>
-        Hello , welcome to RNA project. 
-      </h1>
-    </>
+<BrowserRouter>
+<Routes>
+  <Route path="/audio" element={<AudioCapture />} />
+</Routes>
+</BrowserRouter>
   )
 }
 
