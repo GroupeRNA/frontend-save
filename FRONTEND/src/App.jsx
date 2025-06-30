@@ -1,17 +1,20 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
 import './App.css'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import QuickNote from './pages/notes/Quicknote'
+import HomePage from './pages/home/home'
+
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <>
-      <h1 className='text-3xl font-bold  text-blue-700 m-10'>
-        Hello , welcome to RNA project. 
-      </h1>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/note" element={<QuickNote />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 

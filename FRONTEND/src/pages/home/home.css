@@ -1,0 +1,5 @@
+.homebg{
+    background-image: url('../assets/images/bg.png');
+    background-repeat: repeat-x;
+    background-size: cover;
+}
