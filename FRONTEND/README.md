@@ -7,10 +7,16 @@ Assurez-vous d'avoir [Node.js](https://nodejs.org/) (v18 ou supérieure) install
 1. **Cloner le dépôt**  
    ```sh
    git clone https://github.com/GroupeRNA/frontend-save.git
-   cd FRONTEND
+   ```
+    **Copier et coller les deux commande suivants dans votre terminale pour accéder au projet **  
+   ```sh
+   cd frontend-save
+   ```
+   ```sh
+    cd FRONTEND
    ```
 
-2. **Installer les dépendances**  
+2. **Installer les dépendances nécessaires**  
    ```sh
    npm install
    ```
