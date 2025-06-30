@@ -1,13 +1,17 @@
-import Test from "./components/Test/Test"
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import './App.css'
+
 function App() {
+  const [count, setCount] = useState(0)
 
   return (
-  <BrowserRouter>
-  <Routes>
-    <Route path="/" element={<Test />} />
-  </Routes>
-  </BrowserRouter>
+    <>
+      <h1 className='text-3xl font-bold  text-blue-700 m-10'>
+        Hello , welcome to RNA project. 
+      </h1>
+    </>
   )
 }
 
