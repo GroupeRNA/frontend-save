@@ -1,5 +1,5 @@
-import api from "../../api/api"
-import { CREATE_TRANSCRIPTION, GET_TRANSCRIPTION_BY_ID, LIST_TRANSCRIPTION } from "../../constants/endpoints"
+import api from "../../data/api/api"
+import { CREATE_TRANSCRIPTION, GET_TRANSCRIPTION_BY_ID, LIST_TRANSCRIPTION } from "../../data/constants/endpoints"
 
 
 //Service pour la transcription 
