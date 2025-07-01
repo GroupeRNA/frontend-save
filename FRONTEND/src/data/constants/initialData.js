@@ -11,13 +11,8 @@ export const initialAudio = {
   "audio_id": 0,
   "file": '',
   "audio_title": '',
-  "uploaded_at": '',
-  "user": initialUser
+  "audio_url" :"",
+  "transcription":"",
+  "user": initialUser.id
 };
 
-export const initialTranscription = {
-  "transcription_id": 0,
-  "text": '',
-  "transcription_title": '',
-  "audio": initialAudio
-};

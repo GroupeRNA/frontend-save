@@ -6,7 +6,7 @@ import { useInView } from 'react-intersection-observer';
 import image from "../assets/images/image.png"; 
 import './home.css';
 
-const FeatureCard = ({ icon, title, description, delay }) => {
+const FeatureCard = ({ icon, title, description, delay, onClick }) => {
   const controls = useAnimation();
   const [ref, inView] = useInView();
 
@@ -26,7 +26,8 @@ const FeatureCard = ({ icon, title, description, delay }) => {
         hidden: { opacity: 0, y: 50 }
       }}
       transition={{ duration: 0.5, delay }}
-      className="bg-indigo-900 p-10 lg:scale-105 rounded-2xl border border-purple-500 shadow-md hover:shadow-lg transition-all hover:-translate-y-2 backdrop-blur-sm"
+      className="bg-indigo-900 p-10 lg:scale-105 rounded-2xl border border-purple-500 shadow-md hover:shadow-lg transition-all hover:-translate-y-2 backdrop-blur-sm cursor-pointer"
+      onClick={onClick}
     >
       <div className="flex justify-center mb-4">
         <div className="bg-blue-100 p-4 rounded-full">
@@ -64,7 +65,7 @@ const HomePage = () => {
           hidden: { opacity: 0, y: -50 }
         }}
         transition={{ duration: 0.8 }}
-        className="text-4xl sm:text-4xl md:text-6xl font-bold my-10 leading-tight text-blue-400"
+        className="text-3xl sm:text-2xl md:text-6xl font-bold my-10 leading-tight text-blue-400"
       >
         Donnez <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-green-500">voix</span> à vos <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-blue-600">idées</span>
       </motion.h1>
@@ -123,38 +124,41 @@ const HomePage = () => {
       </div>
 
       {/* Main Content */}
-      <div className="bg-purple-850 border-t border-purple-900 w-full pt-10  pb-30 flex-grow">
+      <div className="bg-purple-850 border-t border-purple-900 w-full pt-10 pb-30 flex-grow">
         {/* Subheading */}
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3, duration: 0.8 }}
-          className="text-xl sm:text-2xl md:text-3xl mb-10 font-bold max-w-3xl mx-auto leading-relaxed text-blue-400 pt-10"
+          className="text-xl mx-5 sm:text-2xl md:text-3xl mb-10 font-bold max-w-3xl md:mx-auto leading-relaxed text-blue-400 pt-10"
         >
           La transcription vocale intelligente qui <span className="font-semibold text-green-500">capture chaque mot</span> avec une précision remarquable.
         </motion.p>
         <div className="max-w-5xl mx-auto px-4 sm:px-6 py-20">
           {/* Features Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 my-12">
-              <FeatureCard 
-                icon={<FaMicrophone className="text-4xl md:text-5xl text-blue-600" />} 
-                title="Enregistrement intelligent" 
-                description="Parlez naturellement et obtenez une transcription précise en temps réel avec notre technologie de reconnaissance vocale de pointe." 
-                delay={0.2} 
-              />
-              <FeatureCard 
-                icon={<FaUpload className="text-4xl md:text-5xl text-green-500" />} 
-                title="Importation facile" 
-                description="Transformez vos fichiers audio existants (MP3, WAV) en texte éditable en quelques secondes seulement." 
-                delay={0.4} 
-              />
-              <FeatureCard 
-                icon={<FaKeyboard className="text-4xl md:text-5xl text-red-500" />} 
-                title="Édition avancée" 
-                description="Corrigez, formatez et organisez vos transcriptions avec notre suite complète d'outils d'édition intuitifs." 
-                delay={0.6} 
-              />
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 my-12">
+            <FeatureCard 
+              icon={<FaMicrophone className="text-4xl md:text-5xl text-blue-600" />} 
+              title="Enregistrement intelligent" 
+              description="Parlez naturellement et obtenez une transcription précise en temps réel avec notre technologie de reconnaissance vocale de pointe." 
+              delay={0.2}
+              onClick={() => navigate('/note')}
+            />
+            <FeatureCard 
+              icon={<FaUpload className="text-4xl md:text-5xl text-green-500" />} 
+              title="Importation facile" 
+              description="Transformez vos fichiers audio existants (MP3, WAV) en texte éditable en quelques secondes seulement." 
+              delay={0.4}
+              onClick={() => navigate('/upload')}
+            />
+            <FeatureCard 
+              icon={<FaKeyboard className="text-4xl md:text-5xl text-red-500" />} 
+              title="Édition avancée" 
+              description="Corrigez, formatez et organisez vos transcriptions avec notre suite complète d'outils d'édition intuitifs." 
+              delay={0.6}
+              onClick={() => navigate('/edit')}
+            />
+          </div>
         </div>
       </div>
 
